@@ -1,6 +1,6 @@
 class CustomerOrder
 
-  attr_reader :menu, :order
+  attr_reader :menu, :order, :total_price
 
   def initialize(takeaway = Takeaway.new)
     @menu = takeaway.menu
@@ -11,4 +11,9 @@ class CustomerOrder
     @menu.each { |dish, price| item == dish ? order[dish] = price : "no such dish" }
   end
 
+  def order_total
+    total_price = 0
+    @order.each { |dish, price| total_price += price }
+    return total_price
+  end
 end

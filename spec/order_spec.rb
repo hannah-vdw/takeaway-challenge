@@ -18,4 +18,11 @@ describe CustomerOrder do
     end
   end
 
+  describe '#order_total' do
+    it 'returns total from order' do
+      customer_order.new_order("Tofish")
+      expect(customer_order.order_total).to eq(6)
+    end
+  end
+
 end
