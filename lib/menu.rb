@@ -9,7 +9,7 @@ class Takeaway
   end
 
   def list_dishes
-    @menu.each { | dish, price | puts "#{dish}, £#{price}" }
+    @menu.each { |dish, price| puts "#{dish}, £#{price}" }
   end
 
 end
